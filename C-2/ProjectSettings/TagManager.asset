@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 1513231265
+    locked: 0
+  - name: Environment
+    uniqueID: 3645741511
+    locked: 0
+  - name: Platforms
+    uniqueID: 629245601
+    locked: 0
+  - name: Items
+    uniqueID: 2546598375
+    locked: 0
+  - name: Enemy
+    uniqueID: 1657753843
+    locked: 0
+  - name: Player
+    uniqueID: 3743206833
+    locked: 0
