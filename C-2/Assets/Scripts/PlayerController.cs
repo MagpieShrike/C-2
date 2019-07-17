@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
+	public Text score;
 
     private Rigidbody2D rb2d;
+	private int count;
+	private int lives;
 
     Animator anim;
 
@@ -16,6 +20,11 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+		count = 0;
+		setScore();
+
+		lives = 3;
     }
 
     // Update is called once per frame
@@ -43,13 +52,56 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+            setScore();
+        }
+
+		if (other.gameObject.CompareTag("Enemy"))
+		{
+			other.gameObject.SetActive(false);
+			lives = lives - 1;
+			lifeCounter();
+
+			anim.SetInteger("State", 3);
+		}
+	}
+
+	void setScore()
+	{
+		score.text = "Score: " + count.ToString();
+
+		/*if (count = 4)
+		{
+			winText.text = "You Win!";
+		}*/
+	}
+
+    void lifeCounter()
+	{
+        if (lives == 2)
+		{
+			GameObject.FindWithTag("H3").SetActive(false);
+		}
+		if (lives == 1)
+		{
+			GameObject.FindWithTag("H2").SetActive(false);
+		}
+		if (lives == 0)
+		{
+			GameObject.FindWithTag("H1").SetActive(false);
+
+			anim.SetInteger("State", 4);
+		}
+	}
+
     void transition()
     {
-        /*if (Input.anyKey == false)
-        {
-            anim.SetInteger("State", 0);
-        }*/
-
+        // idle - jump
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             anim.SetInteger("State", 2);
@@ -59,11 +111,17 @@ public class PlayerController : MonoBehaviour
             anim.SetInteger("State", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        // idle - move
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+			//transform.Rotate.y = 180;
             anim.SetInteger("State", 1);
         }
-        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			anim.SetInteger("State", 1);
+		}
+		if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             anim.SetInteger("State", 0);
         }
