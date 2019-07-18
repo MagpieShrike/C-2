@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
 	public Text score;
+    public Text level;
 
     private Rigidbody2D rb2d;
 	private int count;
@@ -25,6 +27,15 @@ public class PlayerController : MonoBehaviour
 		setScore();
 
 		lives = 3;
+
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            level.text = "Level 1";
+        }
+        else if (SceneManager.GetActiveScene().name == "Level2")
+        {
+            level.text = "Level 2";
+        }
     }
 
     // Update is called once per frame
@@ -75,10 +86,13 @@ public class PlayerController : MonoBehaviour
 	{
 		score.text = "Score: " + count.ToString();
 
-		/*if (count = 4)
+		if (count == 4)
 		{
-			winText.text = "You Win!";
-		}*/
+            if (SceneManager.GetActiveScene().name == "Level1")
+            {
+                SceneManager.LoadScene("Level2");
+            } 
+        }
 	}
 
     void lifeCounter()

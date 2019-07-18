@@ -5854,6 +5854,18 @@ EdgeCollider2D:
   - {x: -8, y: -1}
   - {x: -9, y: -2}
   - {x: -9, y: -5}
+--- !u!114 &1811104643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3697549658257227103, guid: fe2554774193849c08a91a2a3c8c5b20,
+    type: 3}
+  m_PrefabInstance: {fileID: 3912868429671496697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1813828231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6194,6 +6206,11 @@ PrefabInstance:
       propertyPath: score
       value: 
       objectReference: {fileID: 1133011508}
+    - target: {fileID: 6408448305722527406, guid: d15e211d22ef84dab9439093ce1fbc66,
+        type: 3}
+      propertyPath: level
+      value: 
+      objectReference: {fileID: 1811104643}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d15e211d22ef84dab9439093ce1fbc66, type: 3}
 --- !u!1001 &8802973039346770252
