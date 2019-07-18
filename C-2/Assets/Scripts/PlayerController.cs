@@ -114,11 +114,12 @@ public class PlayerController : MonoBehaviour
         // idle - move
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-			//transform.Rotate.y = 180;
+			transform.localScale = new Vector2 (-1.5f, 1.5f);
             anim.SetInteger("State", 1);
         }
 		if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
+			transform.localScale = new Vector2(1.5f, 1.5f);
 			anim.SetInteger("State", 1);
 		}
 		if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
