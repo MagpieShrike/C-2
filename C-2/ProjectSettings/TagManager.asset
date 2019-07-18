@@ -10,6 +10,7 @@ TagManager:
   - H2
   - H3
   - Enemy
+  - LiquidDeath
   layers:
   - Default
   - TransparentFX
