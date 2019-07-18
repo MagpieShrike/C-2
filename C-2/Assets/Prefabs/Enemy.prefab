@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 8802973039400597672}
   - component: {fileID: 8802973039400597673}
   - component: {fileID: 8802973039400597674}
+  - component: {fileID: -6444752707044886781}
   m_Layer: 0
-  m_Name: Pickup
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,10 +128,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+    - - {x: -0.3, y: 0.3}
+      - {x: -0.3, y: -0.3}
+      - {x: 0.3, y: -0.3}
+      - {x: 0.3, y: 0.3}
 --- !u!50 &8802973039400597674
 Rigidbody2D:
   serializedVersion: 4
@@ -152,3 +153,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6444752707044886781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802973039400597677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc4f4ffa89ef46f7ba0809a10fff1dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

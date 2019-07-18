@@ -170,17 +170,17 @@ PrefabInstance:
     - target: {fileID: 8802973039400597677, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_Name
-      value: Pickup (3)
+      value: Enemy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.05
+      value: -6.66
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.26
+      value: -5.08
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
@@ -3758,17 +3758,17 @@ PrefabInstance:
     - target: {fileID: 8802973039400597677, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_Name
-      value: Pickup (1)
+      value: Enemy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.57
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.05
+      value: -6.11
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
@@ -4024,12 +4024,12 @@ PrefabInstance:
     - target: {fileID: 8802973039400597677, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_Name
-      value: Pickup (2)
+      value: Enemy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.79
+      value: -6.01
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
@@ -6240,17 +6240,17 @@ PrefabInstance:
     - target: {fileID: 8802973039400597677, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_Name
-      value: Pickup
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.31
+      value: 4.99
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.97
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 8802973039400597679, guid: 0ec832368caf646ee85aa4e54952f351,
         type: 3}
