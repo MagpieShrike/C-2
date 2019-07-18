@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
 	public Text score;
     public Text level;
+    public Text win;
 
     private Rigidbody2D rb2d;
 	private int count;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
 		setScore();
 
 		lives = 3;
+        win.text = "";
 
         if (SceneManager.GetActiveScene().name == "Level1")
         {
@@ -90,8 +92,13 @@ public class PlayerController : MonoBehaviour
 		{
             if (SceneManager.GetActiveScene().name == "Level1")
             {
+                win.text = "Level Clear";
                 SceneManager.LoadScene("Level2");
-            } 
+            }
+            else if (SceneManager.GetActiveScene().name == "Level2")
+            {
+                win.text = "You Win!";
+            }
         }
 	}
 
