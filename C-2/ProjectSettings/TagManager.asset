@@ -11,6 +11,7 @@ TagManager:
   - H3
   - Enemy
   - LiquidDeath
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

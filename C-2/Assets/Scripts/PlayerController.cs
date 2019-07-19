@@ -12,9 +12,14 @@ public class PlayerController : MonoBehaviour
     public Text level;
     public Text win;
 
+    public AudioClip bgMusic;
+    public AudioClip winMusic;
+    public AudioSource musicSource;
+
     private Rigidbody2D rb2d;
 	private int count;
 	private int lives;
+    private Vector3 originalPos;
 
     Animator anim;
 
@@ -23,8 +28,11 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        originalPos = gameObject.transform.position;
+        musicSource.clip = bgMusic;
+        musicSource.Play();
 
-		count = 0;
+        count = 0;
 		setScore();
 
 		lives = 3;
@@ -82,7 +90,25 @@ public class PlayerController : MonoBehaviour
 
 			anim.SetInteger("State", 3);
 		}
-	}
+
+        if (count == 4)
+        {
+            if (other.gameObject.CompareTag("Checkpoint"))
+            {
+                SceneManager.LoadScene("Level2");
+            }
+        }
+
+        if (other.gameObject.CompareTag("LiquidDeath"))
+        {
+            lives = lives - 1;
+            lifeCounter();
+
+            anim.SetInteger("State", 3);
+
+            gameObject.transform.position = originalPos;
+        }
+    }
 
 	void setScore()
 	{
@@ -92,12 +118,16 @@ public class PlayerController : MonoBehaviour
 		{
             if (SceneManager.GetActiveScene().name == "Level1")
             {
-                win.text = "Level Clear";
-                SceneManager.LoadScene("Level2");
+                win.text = "Level Clear \n Proceed to Checkpoint";
+                musicSource.Stop();
+                musicSource.clip = winMusic;
             }
             else if (SceneManager.GetActiveScene().name == "Level2")
             {
                 win.text = "You Win!";
+                musicSource.Stop();
+                musicSource.clip = winMusic;
+                musicSource.Play();
             }
         }
 	}
@@ -115,9 +145,11 @@ public class PlayerController : MonoBehaviour
 		if (lives == 0)
 		{
 			GameObject.FindWithTag("H1").SetActive(false);
+            gameObject.SetActive(false);
+            win.text = "You Lose!";
+            musicSource.Stop();
 
-			anim.SetInteger("State", 4);
-		}
+        }
 	}
 
     void transition()
